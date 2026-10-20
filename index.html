@@ -8,12 +8,57 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@1.52.0/font/lucide.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/layout/landing.css">
   <link rel="stylesheet" href="assets/css/pages/landing/home.css">
 </head>
 <body>
   <main id="top">
+    <section id="browse" class="sec browse" aria-labelledby="browse-title">
+      <div class="wrap">
+        <div class="browse-head reveal">
+          <div class="browse-heading">
+            <p class="eyebrow">Recently posted</p>
+            <h2 id="browse-title">Fresh on campus this week</h2>
+          </div>
+          <a class="btn btn-s" href="#browse">Start browsing</a>
+          <a class="browse-all" href="#browse">See all</a>
+        </div>
+        <div class="browse-grid"></div>
+        <template id="listing-card">
+          <article class="card listing reveal">
+            <div class="listing-media">
+              <img class="listing-photo" alt="" width="800" height="600" loading="lazy">
+              <div class="listing-dim"></div>
+              <div class="listing-sold">
+                <span class="listing-stamp"><span class="listing-stamp-check"><i class="icon-check" aria-hidden="true"></i></span>Sold</span>
+                <span class="listing-owner">Found a new owner</span>
+              </div>
+              <button class="fav" type="button" aria-label="Save to favorites"><i class="icon-heart" aria-hidden="true"></i></button>
+            </div>
+            <div class="listing-body">
+              <div class="listing-meta"><span class="listing-cat"></span><span class="listing-time"></span></div>
+              <h3 class="listing-title"><a class="listing-link" href="listing.html"></a></h3>
+              <div class="listing-badges">
+                <span class="badge-cond"></span>
+                <span class="badge-swap"><i class="icon-arrow-left-right" aria-hidden="true"></i><span>Swap<span class="badge-swap-more"> available</span></span></span>
+              </div>
+              <div class="listing-foot">
+                <span class="listing-price"></span>
+                <span class="listing-where"></span>
+              </div>
+            </div>
+          </article>
+        </template>
+        <a class="btn btn-s browse-more" href="#browse">Start browsing</a>
+      </div>
+    </section>
   </main>
+
+  <script src="assets/js/utils/format.js"></script>
+  <script src="assets/js/utils/storage.js"></script>
+  <script src="assets/js/data/listings.js"></script>
+  <script src="assets/js/pages/landing/home.js"></script>
 </body>
 </html>

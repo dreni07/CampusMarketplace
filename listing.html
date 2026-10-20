@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Listing · CampusSwap</title>
+  <meta name="description" content="Photos, price, condition and pickup place of an item posted by a student on your campus.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@1.52.0/font/lucide.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/layout/landing.css">
+  <link rel="stylesheet" href="assets/css/pages/landing/listing.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="topbar-logo" href="index.html" aria-label="CampusSwap home">
+      <span class="topbar-mark"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9.3A8 8 0 0 1 19.5 9.3M20.3 6.4L19.5 9.3L17.1 7.5M19.5 14.7A8 8 0 0 1 4.5 14.7M3.7 17.6L4.5 14.7L6.9 16.5"></path><path d="M12 8.4L16 10.4L12 12.4L8 10.4Z" fill="currentColor" stroke-width="1.4"></path><path d="M9.9 11.5v1.9c0 .8 1 1.4 2.1 1.4s2.1-.6 2.1-1.4v-1.9" stroke-width="1.6"></path></svg></span>
+      <span class="topbar-name">Campus<span>Swap</span></span>
+    </a>
+    <a class="back" href="index.html"><i class="icon-chevron-left" aria-hidden="true"></i>Back to home</a>
+  </header>
+
+  <main class="detail-page">
+    <div class="wrap">
+      <article class="detail" aria-labelledby="detail-title">
+        <div class="listing-media detail-media">
+          <img class="listing-photo" alt="" width="800" height="600">
+          <div class="detail-sold" hidden>
+            <div class="listing-dim"></div>
+            <div class="listing-sold">
+              <span class="listing-stamp"><span class="listing-stamp-check"><i class="icon-check" aria-hidden="true"></i></span>Sold</span>
+              <span class="listing-owner">Found a new owner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-info">
+          <div class="detail-heading">
+            <p class="eyebrow detail-cat"></p>
+            <h1 id="detail-title" class="detail-title"></h1>
+          </div>
+          <div class="listing-badges">
+            <span class="badge-cond"></span>
+            <span class="badge-swap"><i class="icon-arrow-left-right" aria-hidden="true"></i><span>Swap<span class="badge-swap-more"> available</span></span></span>
+          </div>
+          <p class="detail-price"></p>
+          <p class="detail-desc"></p>
+
+          <section class="detail-specs" aria-labelledby="specs-title">
+            <h2 id="specs-title" class="eyebrow">Details</h2>
+            <table class="detail-table">
+              <tr><th scope="row">Condition</th><td class="spec-cond"></td></tr>
+              <tr><th scope="row">Category</th><td class="spec-cat"></td></tr>
+              <tr><th scope="row">Swap</th><td class="spec-swap"></td></tr>
+              <tr><th scope="row">Pickup</th><td class="spec-where"></td></tr>
+              <tr><th scope="row">Posted</th><td class="spec-posted"></td></tr>
+              <tr><th scope="row">Status</th><td class="spec-status"></td></tr>
+            </table>
+          </section>
+
+          <div class="detail-actions">
+            <a class="btn btn-p detail-buy" href="login.html">Buy</a>
+            <a class="btn btn-s detail-swap" href="login.html">Offer a swap</a>
+          </div>
+          <div class="detail-sold-note" hidden>
+            <p>This item has found a new owner.</p>
+            <a class="btn btn-s" href="index.html#browse">Browse other listings</a>
+          </div>
+        </div>
+      </article>
+
+      <section class="detail-missing" aria-labelledby="missing-title" hidden>
+        <h1 id="missing-title" class="detail-title">Listing not found</h1>
+        <p>This listing doesn't exist or was removed.</p>
+        <a class="btn btn-s" href="index.html#browse">Browse other listings</a>
+      </section>
+    </div>
+  </main>
+
+  <script src="assets/js/utils/format.js"></script>
+  <script src="assets/js/utils/storage.js"></script>
+  <script src="assets/js/data/listings.js"></script>
+  <script src="assets/js/pages/landing/listing.js"></script>
+</body>
+</html>
