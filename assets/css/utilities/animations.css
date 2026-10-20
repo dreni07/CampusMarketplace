@@ -1,0 +1,22 @@
+.reveal {
+  opacity: 0;
+  translate: 0 32px; /* translate, not transform, so it doesn't fight the cards' hover lift */
+  transition: opacity 0.7s ease var(--revealDelay, 0s), translate 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) var(--revealDelay, 0s);
+}
+
+.card.reveal { /* a plain .reveal transition would replace the card's own hover transition */
+  transition: opacity 0.7s ease var(--revealDelay, 0s), translate 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) var(--revealDelay, 0s), transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    translate: none !important;
+    transition: none !important;
+  }
+}
