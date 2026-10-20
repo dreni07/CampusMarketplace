@@ -1,0 +1,41 @@
+body {
+  font-family: var(--fontBody);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fontDisplay);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accentText);
+}
+
+@media (max-width: 520px) {
+  body {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+  }
+}

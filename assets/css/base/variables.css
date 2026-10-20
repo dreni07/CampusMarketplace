@@ -1,0 +1,34 @@
+:root {
+  --bg: #FCF2E5;
+  --alt: #F2E7D7;
+  --card: #FFFAF3;
+  --photo: #E9E5D9;
+  --soft: #E9E5D9;
+  --border: #EADFCE;
+  --borderStrong: #CFC3B0;
+  --tag: #A8A492;
+  --tagText: #231C1C;
+  --text: #524646;
+  --muted: #6B5F5D;
+  --accent: #EC5B38;
+  --onAccent: #2A1A15;
+  --accentText: #B13F1F;
+  --dark: #524646;
+  --onDark: #FCF2E5;
+  --onDarkMuted: #D8CDC1;
+  --navBg: #FCF2E5;
+  --navText: #524646;
+  --navHover: #B13F1F;
+  --ring: rgba(236, 91, 56, 0.22);
+  --white: #FFFFFF;
+  --offWhite: #F6F1E7;
+  --offWhiteAlt: #FAF6EF;
+  --success: #5E7D55;
+  --successBg: #E6ECDD;
+  --warningBg: #FBE4D8;
+
+  --shadowButton: 0 8px 18px -10px rgba(30, 25, 20, 0.45);
+
+  --fontBody: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+  --fontDisplay: 'Bricolage Grotesque', 'Figtree', system-ui, sans-serif;
+}
