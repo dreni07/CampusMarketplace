@@ -1,107 +1,73 @@
-/* ---------- Got stuff you don't need? (#sell) ---------- */
-
-.cta {
-  padding-top: 24px; /* sits close under the "CampusSwap in numbers" panel */
+.cta-box {
+  display: flex;                    
+  flex-wrap: wrap;                
+  justify-content: space-between;  
+  align-items: center;             
+  gap: 24px;                       
+  padding: 48px;
+  border-radius: 28px;              
+  background-color: #524646;        
+  color: #FCF2E5;                   
 }
 
-.cta-panel {
-  display: flex;
-  flex-wrap: wrap; /* the buttons drop under the text when there isn't room next to it */
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px 40px;
-  padding: clamp(32px, 4vw, 48px) clamp(28px, 4.5vw, 56px);
-  border-radius: var(--radiusPanel, 28px);
-  background: var(--dark);
-  color: var(--onDark);
-}
 
 .cta-text {
-  flex: 1 1 420px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  max-width: 600px;
 }
 
 .cta-text h2 {
-  font-size: clamp(26px, 3vw, 34px);
+  font-size: 34px;
+  margin-bottom: 10px;
 }
 
 .cta-text p {
-  max-width: 54ch;
-  color: var(--onDarkMuted);
   font-size: 17px;
+  color: #D8CDC1;                   
 }
 
-.cta-actions {
-  display: flex;
-  flex-wrap: wrap;
+
+.cta-buttons {
+  display: flex;                   
   gap: 12px;
 }
 
-.cta-actions .btn {
-  min-height: 52px;
-  padding: 0 26px;
+.cta-buttons .btn-p {
+  color: #ffff;                   
 }
 
-.cta-actions .btn:hover {
-  transform: translateY(-2px);
+
+.plus {
+  font-size: 20px;
 }
 
-.cta-actions .btn-o:hover {
-  border-color: var(--onDark);
+@media (max-width: 880px) {
+  .cta-box {
+    padding: 36px;
+  }
 }
 
-.cta-actions .btn:focus-visible {
-  box-shadow: 0 0 0 4px var(--onDarkMuted); /* the orange ring is hard to see on the dark panel */
-}
-
-.cta-actions .btn-p {
-  color: var(--onAccent);
-}
-
-.cta-plus {
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2.2;
-  stroke-linecap: round;
-}
 
 @media (max-width: 520px) {
-  .cta {
-    padding-top: 16px;
-  }
-
-  .cta-panel {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 22px;
+  .cta-box {
+    flex-direction: column;         
+    align-items: stretch;           
     padding: 28px 22px;
-    border-radius: var(--radiusCardMobile, 20px);
+    border-radius: 20px;
   }
 
-  .cta-text {
-    flex: none;
+  .cta-text h2 {
+    font-size: 26px;
   }
 
   .cta-text p {
     font-size: 15px;
   }
 
-  .cta-actions {
-    flex-direction: column; /* Post an item stays on top */
-    gap: 10px;
+  .cta-buttons {
+    flex-direction: column;         
   }
 
-  .cta-actions .btn {
-    width: 100%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cta-actions .btn:hover {
-    transform: none;
+  .cta-buttons .btn {
+    width: 100%;                    
   }
 }
