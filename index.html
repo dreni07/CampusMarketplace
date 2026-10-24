@@ -8,12 +8,40 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@1.52.0/font/lucide.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/layout/landing.css">
   <link rel="stylesheet" href="assets/css/pages/landing/home.css">
 </head>
 <body>
   <main id="top">
+    <section class="stats" aria-labelledby="stats-title">
+      <div class="wrap">
+        <div class="stats-panel reveal">
+          <div class="stats-text">
+            <p class="eyebrow">CampusSwap in numbers</p>
+            <h2 id="stats-title">A campus economy that keeps growing.</h2>
+            <p class="stats-intro">
+              <span class="stats-intro-long">Every textbook passed on is one less bought new. Here's what students have done on CampusSwap this academic year.</span>
+              <span class="stats-intro-short">What students have done on CampusSwap this academic year.</span>
+            </p>
+          </div>
+
+          <div class="stats-trade">
+            <h3>What students trade most</h3>
+            <!-- Hidden from screen readers, because the legend says the same thing in text -->
+            <div class="trade-bar" aria-hidden="true"></div>
+            <ul class="trade-legend"></ul>
+            <p class="trade-legend-short"></p>
+          </div>
+
+          <!-- The cards, the bar and the legend are added by assets/js/pages/landing/home.js -->
+          <ul class="stats-cards"></ul>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <script src="assets/js/pages/landing/home.js"></script>
 </body>
 </html>
