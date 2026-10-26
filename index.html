@@ -8,111 +8,380 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@1.52.0/font/lucide.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/layout/landing.css">
   <link rel="stylesheet" href="assets/css/pages/landing/home.css">
 </head>
 <body>
-  <footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-grid">
-      
-      <div class="footer-col footer-col-brand">
-        <div class="footer-logo">
-          <div class="logo-icon-bg">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 3l4 4-4 4"></path>
-              <path d="M20 7H4"></path>
-              <path d="M8 21l-4-4 4-4"></path>
-              <path d="M4 17h16"></path>
-            </svg>
-          </div>
-          <span class="logo-text">CampusSwap</span>
+  <header class="site-header">
+    <div class="wrap header-bar">
+      <a class="header-logo" href="index.html" aria-label="CampusSwap home">
+        <span class="header-mark"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9.3A8 8 0 0 1 19.5 9.3M20.3 6.4L19.5 9.3L17.1 7.5M19.5 14.7A8 8 0 0 1 4.5 14.7M3.7 17.6L4.5 14.7L6.9 16.5"></path><path d="M12 8.4L16 10.4L12 12.4L8 10.4Z" fill="currentColor" stroke-width="1.4"></path><path d="M9.9 11.5v1.9c0 .8 1 1.4 2.1 1.4s2.1-.6 2.1-1.4v-1.9" stroke-width="1.6"></path></svg></span>
+        <span class="header-name">Campus<span>Swap</span></span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main">
+        <ul class="header-links">
+          <li><a class="header-link" href="#browse">Browse</a></li>
+          <li><a class="header-link" href="#sell">Sell</a></li>
+          <li><a class="header-link" href="#swap">Swap</a></li>
+          <li><a class="header-link" href="#favorites">Favorites</a></li>
+          <li><a class="header-link" href="#how">How it works</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-s header-register" href="register.html">Register</a>
+        <a class="btn btn-p" href="login.html">Log in</a>
+        <button class="icon-btn header-menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <i class="icon-menu" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+        <div class="mobile-menu-top">
+          <a class="header-logo" href="index.html" aria-label="CampusSwap home">
+            <span class="header-mark"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9.3A8 8 0 0 1 19.5 9.3M20.3 6.4L19.5 9.3L17.1 7.5M19.5 14.7A8 8 0 0 1 4.5 14.7M3.7 17.6L4.5 14.7L6.9 16.5"></path><path d="M12 8.4L16 10.4L12 12.4L8 10.4Z" fill="currentColor" stroke-width="1.4"></path><path d="M9.9 11.5v1.9c0 .8 1 1.4 2.1 1.4s2.1-.6 2.1-1.4v-1.9" stroke-width="1.6"></path></svg></span>
+            <span class="header-name">Campus<span>Swap</span></span>
+          </a>
+          <button class="icon-btn mobile-menu-close" type="button" aria-label="Close menu">
+            <i class="icon-x" aria-hidden="true"></i>
+          </button>
         </div>
-        <p class="brand-description">
-          The marketplace where university students buy, sell and swap used textbooks, notes, electronics and dorm essentials.
-        </p>
-        <div class="social-links">
+
+        <div class="mobile-menu-body">
+          <nav aria-label="Menu links">
+            <!-- The rows are added by assets/js/components/header.js -->
+            <ul class="mobile-menu-links"></ul>
+          </nav>
+
+          <div class="mobile-menu-buttons">
+            <a class="btn btn-p" href="login.html">Log in</a>
+            <a class="btn btn-s" href="register.html">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section id="browse" class="sec browse" aria-labelledby="browse-title">
+      <div class="wrap">
+        <div class="browse-head reveal">
+          <div class="browse-heading">
+            <p class="eyebrow">Recently posted</p>
+            <h2 id="browse-title">Fresh on campus this week</h2>
+          </div>
+          <a class="btn btn-s" href="#browse">Start browsing</a>
+          <a class="browse-all" href="#browse">See all</a>
+        </div>
+        <div class="browse-grid"></div>
+        <template id="listing-card">
+          <article class="card listing reveal">
+            <div class="listing-media">
+              <img class="listing-photo" alt="" width="800" height="600" loading="lazy">
+              <div class="listing-dim"></div>
+              <div class="listing-sold">
+                <span class="listing-stamp"><span class="listing-stamp-check"><i class="icon-check" aria-hidden="true"></i></span>Sold</span>
+                <span class="listing-owner">Found a new owner</span>
+              </div>
+              <button class="fav" type="button" aria-label="Save to favorites"><i class="icon-heart" aria-hidden="true"></i></button>
+            </div>
+            <div class="listing-body">
+              <div class="listing-meta"><span class="listing-cat"></span><span class="listing-time"></span></div>
+              <h3 class="listing-title"><a class="listing-link" href="listing.html"></a></h3>
+              <div class="listing-badges">
+                <span class="badge-cond"></span>
+                <span class="badge-swap"><i class="icon-arrow-left-right" aria-hidden="true"></i><span>Swap<span class="badge-swap-more"> available</span></span></span>
+              </div>
+              <div class="listing-foot">
+                <span class="listing-price"></span>
+                <span class="listing-where"></span>
+              </div>
+            </div>
+          </article>
+        </template>
+        <a class="btn btn-s browse-more" href="#browse">Start browsing</a>
+      </div>
+    </section>
+
+
+    <section id="how" class="sec">
+      <div class="wrap how-wrap">
+        <p class="eyebrow">How it works</p>
+        <h2>Three steps, no shipping</h2>
+        <p class="section-subtitle">Everything happens between students at the same university, so handovers take minutes, not days.</p>
+
+        <ol class="how-steps">
+          <li class="how-card">
+            <div class="card-top">
+              <div class="card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+              <span class="step-number">01</span>
+            </div>
+            <h3>Post it</h3>
+            <p>Snap a photo, add a price and condition, and tick "open to swaps" if you'd trade it.</p>
+          </li>
+
+          <li class="how-card">
+            <div class="card-top">
+              <div class="card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+              </div>
+              <span class="step-number">02</span>
+            </div>
+            <h3>Connect</h3>
+            <p>Chat with verified students from your university right in CampusSwap — no phone numbers, no strangers.</p>
+          </li>
+
+          <li class="how-card">
+            <div class="card-top">
+              <div class="card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <span class="step-number">03</span>
+            </div>
+            <h3>Meet on campus</h3>
+            <p>Pick a busy spot like the library entrance or student union, check the item, then pay or swap in person.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="swap" class="sec">
+      <div class="wrap">
+        <div class="swap-box">
+          <div class="swap-text">
+            <p class="eyebrow">Swap, don't spend</p>
+            <h2>Trade last semester's books for this semester's.</h2>
+
+            <p class="swap-desc swap-desc-long">
+              Mark any listing as open to swaps and other students can offer
+              an item instead of cash — or an item plus a little money to even
+              it out.
+            </p>
+            <p class="swap-desc swap-desc-short">
+              Offer an item instead of cash, or an item plus a little money.
+            </p>
+
+            <ul class="swap-list">
+              <li>
+                Send a swap offer from any listing with the “Swap available”
+                tag
+              </li>
+              <li>Add cash on top when the items aren't worth the same</li>
+              <li>Both sides confirm the swap once you've met</li>
+            </ul>
+
+            <a class="btn btn-p swap-btn swap-btn-top" href="#browse"
+              >Browse swappable items</a
+            >
+          </div>
+
+          <figure
+            class="swap-example"
+            aria-label="Example swap between Amira and Jonas"
+          >
+            <div class="swap-card">
+              <div class="swap-icon">
+                <i class="icon-book-text" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="swap-who">Amira offers</p>
+                <p class="swap-title">Introduction to Psychology, sealed</p>
+                <p class="swap-meta">Books · New</p>
+              </div>
+            </div>
+
+            <div class="swap-middle">
+              <span class="swap-circle"
+                ><i class="icon-arrow-left-right" aria-hidden="true"></i
+              ></span>
+              <span>Swap + €4 from Jonas</span>
+            </div>
+
+            <div class="swap-card">
+              <div class="swap-icon">
+                <i class="icon-file-text" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="swap-who">Jonas offers</p>
+                <p class="swap-title">
+                  Calculus I handwritten notes, full semester
+                </p>
+                <p class="swap-meta">Notes · Good</p>
+              </div>
+            </div>
+          </figure>
+
+          <a class="btn btn-p swap-btn swap-btn-bottom" href="#browse"
+            >Browse swappable items</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-labelledby="stats-title">
+      <div class="wrap">
+        <div class="stats-panel reveal">
+          <div class="stats-text">
+            <p class="eyebrow">CampusSwap in numbers</p>
+            <h2 id="stats-title">A campus economy that keeps growing.</h2>
+            <p class="stats-intro">
+              <span class="stats-intro-long">Every textbook passed on is one less bought new. Here's what students have done on CampusSwap this academic year.</span>
+              <span class="stats-intro-short">What students have done on CampusSwap this academic year.</span>
+            </p>
+          </div>
+
+          <div class="stats-trade">
+            <h3>What students trade most</h3>
+            <!-- Hidden from screen readers, because the legend says the same thing in text -->
+            <div class="trade-bar" aria-hidden="true"></div>
+            <ul class="trade-legend"></ul>
+            <p class="trade-legend-short"></p>
+          </div>
+
+          <!-- The cards, the bar and the legend are added by assets/js/pages/landing/home.js -->
+          <ul class="stats-cards"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="sell" class="sec">
+      <div class="wrap">
+        <div class="cta-box">
+
+          <div class="cta-text">
+            <h2>Got stuff you don't need?</h2>
+            <p>That lamp, last year's textbooks, the calculator you only used for one exam — someone on campus is looking for them right now.</p>
+          </div>
+
+          <div class="cta-buttons">
+            <a class="btn btn-p" href="login.html"><span class="plus" aria-hidden="true">+</span>Post an item</a>
+            <a class="btn btn-o" href="#browse">Start browsing</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+
+        <div class="footer-col footer-col-brand">
+          <div class="footer-logo">
+            <div class="logo-icon-bg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 3l4 4-4 4"></path>
+                <path d="M20 7H4"></path>
+                <path d="M8 21l-4-4 4-4"></path>
+                <path d="M4 17h16"></path>
+              </svg>
+            </div>
+            <span class="logo-text">CampusSwap</span>
+          </div>
+          <p class="brand-description">
+            The marketplace where university students buy, sell and swap used textbooks, notes, electronics and dorm essentials.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com" class="social-icon" aria-label="CampusSwap on Instagram" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://tiktok.com" class="social-icon" aria-label="CampusSwap on TikTok" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="CampusSwap Community Chat">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col footer-col-marketplace">
+          <h3 class="footer-heading">Marketplace</h3>
+          <ul class="footer-links">
+            <li><a href="/browse">Browse listings</a></li>
+            <li><a href="/post">Post an item</a></li>
+            <li><a href="/swaps">Swaps</a></li>
+            <li><a href="/favorites">Favorites</a></li>
+            <li><a href="/how-it-works">How it works</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-safety">
+          <h3 class="footer-heading">Safety tips</h3>
+          <ul class="safety-tips-text">
+            <li>Meet in busy public spots on campus</li>
+            <li>Check the item before you pay</li>
+            <li>Keep chats inside CampusSwap</li>
+          </ul>
+          <a href="/safety" class="safety-more-link">All safety tips &rarr;</a>
+        </div>
+
+        <div class="footer-col footer-col-contact">
+          <h3 class="footer-heading">Contact</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@campusswap.example">hello@campusswap.example</a></li>
+            <li class="contact-info">[Your university] &middot; Student project team</li>
+            <li><a href="/faq">FAQ & help</a></li>
+            <li><a href="/report">Report a listing</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; <span id="copyright-year">2026</span> CampusSwap &middot; A university team project
+        </div>
+
+        <div class="mobile-socials">
           <a href="https://instagram.com" class="social-icon" aria-label="CampusSwap on Instagram" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
           </a>
           <a href="https://tiktok.com" class="social-icon" aria-label="CampusSwap on TikTok" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
-            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
           </a>
           <a href="#" class="social-icon" aria-label="CampusSwap Community Chat">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
           </a>
         </div>
-      </div>
 
-      <div class="footer-col footer-col-marketplace">
-        <h3 class="footer-heading">Marketplace</h3>
-        <ul class="footer-links">
-          <li><a href="/browse">Browse listings</a></li>
-          <li><a href="/post">Post an item</a></li>
-          <li><a href="/swaps">Swaps</a></li>
-          <li><a href="/favorites">Favorites</a></li>
-          <li><a href="/how-it-works">How it works</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-safety">
-        <h3 class="footer-heading">Safety tips</h3>
-        <ul class="safety-tips-text">
-          <li>Meet in busy public spots on campus</li>
-          <li>Check the item before you pay</li>
-          <li>Keep chats inside CampusSwap</li>
-        </ul>
-        <a href="/safety" class="safety-more-link">All safety tips &rarr;</a>
-      </div>
-
-      <div class="footer-col footer-col-contact">
-        <h3 class="footer-heading">Contact</h3>
-        <ul class="footer-links">
-          <li><a href="mailto:hello@campusswap.example">hello@campusswap.example</a></li>
-          <li class="contact-info">[Your university] &middot; Student project team</li>
-          <li><a href="/faq">FAQ & help</a></li>
-          <li><a href="/report">Report a listing</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <hr class="footer-divider" />
-
-    <div class="footer-bottom">
-      <div class="footer-copyright">
-        &copy; <span id="copyright-year">2026</span> CampusSwap &middot; A university team project
-      </div>
-      
-      <div class="mobile-socials">
-        <a href="https://instagram.com" class="social-icon" aria-label="CampusSwap on Instagram" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-        </a>
-        <a href="https://tiktok.com" class="social-icon" aria-label="CampusSwap on TikTok" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
-        </a>
-        <a href="#" class="social-icon" aria-label="CampusSwap Community Chat">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-        </a>
-      </div>
-
-      <div class="footer-legal">
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
+        <div class="footer-legal">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
-  <main id="top">
-  </main>
+  </footer>
+
+  <script src="assets/js/utils/format.js"></script>
+  <script src="assets/js/utils/storage.js"></script>
+  <script src="assets/js/data/listings.js"></script>
+  <script src="assets/js/components/header.js"></script>
+  <script src="assets/js/pages/landing/home.js"></script>
 </body>
 </html>
