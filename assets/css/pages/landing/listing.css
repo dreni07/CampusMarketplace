@@ -1,0 +1,160 @@
+.detail-page {
+  padding: 24px 0 clamp(64px, 8vw, 104px);
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  align-items: start;
+  gap: clamp(28px, 5vw, 56px);
+}
+
+.detail-media {
+  border: 10px solid var(--card);
+  border-radius: var(--radiusPanel);
+  box-shadow: 0 0 0 1px var(--border), var(--shadowPhoto);
+  overflow: hidden;
+  isolation: isolate; /* keeps Safari clipping the zoomed photo to the rounded corners */
+}
+
+.detail-media .listing-photo {
+  transition: transform 0.6s ease;
+}
+
+.detail-media:hover .listing-photo {
+  transform: scale(1.03);
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.detail-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-title {
+  font-size: 34px;
+}
+
+.detail-price {
+  font-family: var(--fontDisplay);
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.detail-desc {
+  color: var(--muted);
+}
+
+.detail-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.detail-table th,
+.detail-table td {
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+}
+
+.detail-table tr:last-child th,
+.detail-table tr:last-child td {
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-table th {
+  color: var(--muted);
+  font-weight: 400;
+  text-align: left;
+}
+
+.detail-table td {
+  font-weight: 600;
+  text-align: right;
+}
+
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.detail-sold-note {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+  color: var(--muted);
+}
+
+.detail-missing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: clamp(64px, 9vw, 120px) 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+.detail-missing h1 {
+  color: var(--text);
+}
+
+@media (max-width: 880px) {
+  .detail {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .detail-page {
+    padding: 16px 0 32px;
+  }
+
+  .detail-media {
+    border-width: 6px;
+  }
+
+  .detail-info {
+    gap: 18px;
+  }
+
+  .detail-title {
+    font-size: 28px;
+  }
+
+  .detail-price {
+    font-size: 26px;
+    line-height: 1.1;
+  }
+
+  .detail-actions .btn,
+  .detail-sold-note .btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-media .listing-photo {
+    transition: none;
+  }
+
+  .detail-media:hover .listing-photo {
+    transform: none;
+  }
+}
