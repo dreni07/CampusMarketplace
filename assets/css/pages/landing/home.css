@@ -1,0 +1,159 @@
+#how {
+  background-color: var(--alt);
+}
+
+.how-wrap {
+  text-align: center;
+}
+
+.how-wrap .eyebrow {
+  margin-bottom: 8px;
+}
+
+.how-wrap h2 {
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 580px;
+  margin: 0 auto 48px auto;
+  line-height: 1.5;
+}
+
+.how-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+.how-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.how-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(82, 70, 70, 0.08);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--photo);
+  color: var(--accentText);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-number {
+  font-family: var(--fontDisplay);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--tagText);
+  opacity: 0.4;
+}
+
+.how-card h3 {
+  font-size: 1.25rem;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.how-card p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 880px) {
+  .how-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .section-subtitle {
+    display: none;
+  }
+
+  .how-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .how-card {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 16px 0;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .how-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .step-number,
+  .how-card p {
+    display: none;
+  }
+
+  .card-top {
+    margin-bottom: 8px;
+    justify-content: center;
+  }
+
+  .how-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  .how-card::after {
+    content: "";
+    width: 2px;
+    height: 24px;
+    background-color: var(--borderStrong);
+    margin-top: 16px;
+  }
+
+  .how-card:last-child::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .how-card {
+    transition: none !important;
+  }
+  .how-card:hover {
+    transform: none !important;
+  }
+}
