@@ -1,4 +1,6 @@
-const formatPrice = (price) => `€${price}`;
+const formatNumber = (number) => number.toLocaleString('en-US');
+
+const formatPrice = (price) => `€${formatNumber(price)}`;
 
 const timeAgo = (timestamp) => {
   const hours = Math.floor((Date.now() - timestamp) / (60 * 60 * 1000));

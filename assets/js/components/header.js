@@ -3,7 +3,6 @@ const MENU_LINKS = [
   { label: 'Browse', href: '#browse', icon: 'search' },
   { label: 'Sell', href: '#sell', icon: 'tag' },
   { label: 'Swap', href: '#swap', icon: 'arrow-left-right' },
-  { label: 'Favorites', href: '#favorites', icon: 'heart' },
   { label: 'How it works', href: '#how', icon: 'circle-help' }
 ];
 
@@ -16,7 +15,7 @@ const menuLinkList = document.querySelector('.mobile-menu-links');
 const menuRow = (link) => `
   <li>
     <a class="mobile-menu-link" href="${link.href}">
-      <span class="mobile-menu-icon"><i class="icon-${link.icon}" aria-hidden="true"></i></span>
+      <span class="icon-box mobile-menu-icon"><i class="icon-${link.icon}" aria-hidden="true"></i></span>
       <span class="mobile-menu-label">${link.label}</span>
       <i class="icon-chevron-right mobile-menu-arrow" aria-hidden="true"></i>
     </a>

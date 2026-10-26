@@ -28,16 +28,17 @@ html {
   min-height: 72px;
 }
 
-.header-logo {
+.logo {
   display: flex;
   align-items: center;
   gap: 10px;
   border-radius: 12px;
 }
 
-.header-mark {
+.logo-mark {
   width: 38px;
   height: 38px;
+  flex: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,15 +47,15 @@ html {
   color: var(--white);
 }
 
-.header-name {
+.logo-name {
   font-family: var(--fontDisplay);
   font-size: 21px;
   font-weight: 700;
   letter-spacing: -0.03em;
 }
 
-.header-name span {
-  color: var(--navHover);
+.logo-name span {
+  color: var(--accentText);
 }
 
 .header-links {
@@ -124,14 +125,6 @@ html {
   display: none;
 }
 
-.header-logo:focus-visible,
-.header-link:focus-visible,
-.icon-btn:focus-visible,
-.mobile-menu-link:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px var(--ring);
-}
-
 /* ---------- Mobile menu ---------- */
 
 /* The whole screen is dimmed behind the menu panel */
@@ -141,7 +134,7 @@ html {
   inset: 0;
   z-index: 60;
   justify-content: center;
-  background: rgba(40, 30, 28, 0.35);
+  background: var(--backdrop);
 }
 
 .mobile-menu-panel {
@@ -205,15 +198,6 @@ html {
 }
 
 .mobile-menu-icon {
-  width: 40px;
-  height: 40px;
-  flex: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  background: var(--soft);
-  color: var(--accentText);
   font-size: 20px;
 }
 
@@ -232,10 +216,6 @@ html {
   flex-direction: column;
   gap: 10px;
   margin-top: auto;
-}
-
-.mobile-menu-buttons .btn {
-  width: 100%;
 }
 
 /* ---------- Tablet ---------- */
@@ -267,27 +247,23 @@ html {
     min-height: 64px;
   }
 
-  .header-logo {
+  .site-header .logo {
     gap: 9px;
   }
 
-  .header-mark {
+  .site-header .logo-mark {
     width: 34px;
     height: 34px;
     border-radius: 11px;
   }
 
-  .header-mark svg {
+  .site-header .logo-mark svg {
     width: 24px;
     height: 24px;
   }
 
-  .header-name {
+  .site-header .logo-name {
     font-size: 19px;
-  }
-
-  .header-register {
-    display: none;
   }
 
   .header-actions .btn-p {

@@ -15,9 +15,9 @@
 </head>
 <body>
   <header class="topbar">
-    <a class="topbar-logo" href="index.html" aria-label="CampusSwap home">
-      <span class="topbar-mark"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9.3A8 8 0 0 1 19.5 9.3M20.3 6.4L19.5 9.3L17.1 7.5M19.5 14.7A8 8 0 0 1 4.5 14.7M3.7 17.6L4.5 14.7L6.9 16.5"></path><path d="M12 8.4L16 10.4L12 12.4L8 10.4Z" fill="currentColor" stroke-width="1.4"></path><path d="M9.9 11.5v1.9c0 .8 1 1.4 2.1 1.4s2.1-.6 2.1-1.4v-1.9" stroke-width="1.6"></path></svg></span>
-      <span class="topbar-name">Campus<span>Swap</span></span>
+    <a class="logo" href="index.html" aria-label="CampusSwap home">
+      <span class="logo-mark"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9.3A8 8 0 0 1 19.5 9.3M20.3 6.4L19.5 9.3L17.1 7.5M19.5 14.7A8 8 0 0 1 4.5 14.7M3.7 17.6L4.5 14.7L6.9 16.5"></path><path d="M12 8.4L16 10.4L12 12.4L8 10.4Z" fill="currentColor" stroke-width="1.4"></path><path d="M9.9 11.5v1.9c0 .8 1 1.4 2.1 1.4s2.1-.6 2.1-1.4v-1.9" stroke-width="1.6"></path></svg></span>
+      <span class="logo-name">Campus<span>Swap</span></span>
     </a>
     <a class="back" href="index.html"><i class="icon-chevron-left" aria-hidden="true"></i>Back to home</a>
   </header>
@@ -30,25 +30,25 @@
           <div class="detail-sold" hidden>
             <div class="listing-dim"></div>
             <div class="listing-sold">
-              <span class="listing-stamp"><span class="listing-stamp-check"><i class="icon-check" aria-hidden="true"></i></span>Sold</span>
-              <span class="listing-owner">Found a new owner</span>
+              <span class="listing-stamp"><span class="icon-box icon-box-accent icon-box-round listing-stamp-check"><i class="icon-check" aria-hidden="true"></i></span>Sold</span>
+              <span class="badge listing-owner">Found a new owner</span>
             </div>
           </div>
         </div>
 
         <div class="detail-info">
-          <div class="detail-heading">
+          <div class="section-head">
             <p class="eyebrow detail-cat"></p>
             <h1 id="detail-title" class="detail-title"></h1>
           </div>
           <div class="listing-badges">
-            <span class="badge-cond"></span>
-            <span class="badge-swap"><i class="icon-arrow-left-right" aria-hidden="true"></i><span>Swap<span class="badge-swap-more"> available</span></span></span>
+            <span class="badge badge-cond"></span>
+            <span class="badge badge-outline badge-swap"><i class="icon-arrow-left-right" aria-hidden="true"></i><span>Swap<span class="badge-swap-more"> available</span></span></span>
           </div>
-          <p class="detail-price"></p>
+          <p class="display-value detail-price"></p>
           <p class="detail-desc"></p>
 
-          <section class="detail-specs" aria-labelledby="specs-title">
+          <section class="section-head" aria-labelledby="specs-title">
             <h2 id="specs-title" class="eyebrow">Details</h2>
             <table class="detail-table">
               <tr><th scope="row">Condition</th><td class="spec-cond"></td></tr>
@@ -61,12 +61,12 @@
           </section>
 
           <div class="detail-actions">
-            <a class="btn btn-p detail-buy" href="login.html">Buy</a>
-            <a class="btn btn-s detail-swap" href="login.html">Offer a swap</a>
+            <a class="btn btn-p btn-block detail-buy" href="login.html">Buy</a>
+            <a class="btn btn-s btn-block detail-swap" href="login.html">Offer a swap</a>
           </div>
           <div class="detail-sold-note" hidden>
             <p>This item has found a new owner.</p>
-            <a class="btn btn-s" href="index.html#browse">Browse other listings</a>
+            <a class="btn btn-s btn-block" href="index.html#browse">Browse other listings</a>
           </div>
         </div>
       </article>

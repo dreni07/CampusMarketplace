@@ -44,3 +44,9 @@ img {
 [hidden] {
   display: none !important;
 }
+
+a:focus-visible,
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--ring);
+}

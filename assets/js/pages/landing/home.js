@@ -27,30 +27,8 @@ const freshListings = loadFromStorage('listings')
   .sort((a, b) => b.posted - a.posted)
   .slice(0, 8);
 
-const grid = document.querySelector('.browse-grid');
-freshListings.forEach((item) => grid.append(listingCard(item)));
-
-// ========================================
-// Swap, don't spend (#swap)
-// Fade the box in when you scroll to it
-// ========================================
-
-// 1. Find the box on the page
-const swapBox = document.querySelector('.swap-box');
-
-// 2. Make an observer. It tells us when the box comes onto the screen.
-const swapObserver = new IntersectionObserver(function (entries) {
-  entries.forEach(function (entry) {
-    // isIntersecting is true when the box is visible on the screen
-    if (entry.isIntersecting) {
-      swapBox.classList.add('show');     // the CSS for .show makes it fade in
-      swapObserver.unobserve(swapBox);   // only do it once
-    }
-  });
-}, { threshold: 0.2 });                  // 0.2 = when 20% of the box is visible
-
-// 3. Start watching the box
-swapObserver.observe(swapBox);
+const browseGrid = document.querySelector('.browse-grid');
+freshListings.forEach((item) => browseGrid.append(listingCard(item)));
 
 // ---------- CampusSwap in numbers ----------
 
@@ -71,18 +49,18 @@ const TRADE_SPLIT = [
 ];
 
 // 4200 becomes "4,200+" and 38600 becomes "€38,600"
-const formatStat = (stat) => stat.prefix + stat.value.toLocaleString('en-US') + stat.suffix;
+const formatStat = (stat) => stat.prefix + formatNumber(stat.value) + stat.suffix;
 
 const statCard = (stat) => `
-  <li class="stat-card">
+  <li class="card card-dark stat-card">
     <div class="stat-top">
-      <span class="stat-icon"><i class="icon-${stat.icon}" aria-hidden="true"></i></span>
-      <span class="stat-trend">${stat.trend}</span>
+      <span class="icon-box icon-box-accent stat-icon"><i class="icon-${stat.icon}" aria-hidden="true"></i></span>
+      <span class="badge stat-trend">${stat.trend}</span>
     </div>
-    <span class="stat-value">${formatStat(stat)}</span>
+    <span class="display-value">${formatStat(stat)}</span>
     <div class="stat-text">
       <span class="stat-label">${stat.label}</span>
-      <span class="stat-note">${stat.note}</span>
+      <span class="stat-note hide-mobile">${stat.note}</span>
     </div>
   </li>
 `;
@@ -103,6 +81,8 @@ const tradeTotal = TRADE_SPLIT.reduce((sum, item) => sum + item.percent, 0);
 if (tradeTotal !== 100) {
   console.warn(`The trade split adds up to ${tradeTotal}%, not 100%.`);
 }
+
+document.querySelector('#copyright-year').textContent = new Date().getFullYear();
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
