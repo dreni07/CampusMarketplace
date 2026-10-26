@@ -19,14 +19,14 @@
   box-shadow: var(--shadowButton);
 }
 
-.btn:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px var(--ring);
-}
-
 .btn-p {
   background: var(--accent);
   color: var(--white);
+}
+
+.btn-deep {
+  background: var(--accentText);
+  color: var(--offWhite);
 }
 
 .btn-s {
@@ -57,6 +57,10 @@
 
   .btn:active {
     transform: scale(0.98);
+  }
+
+  .btn-block {
+    width: 100%;
   }
 }
 

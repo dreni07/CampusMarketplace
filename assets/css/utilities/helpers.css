@@ -6,3 +6,15 @@
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+
+@media (min-width: 521px) {
+  .show-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}

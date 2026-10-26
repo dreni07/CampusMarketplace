@@ -26,6 +26,15 @@
   --success: #5E7D55;
   --successBg: #E6ECDD;
   --warningBg: #FBE4D8;
+  --backdrop: rgba(40, 30, 28, 0.35);
+
+  --onDarkSurface: rgba(255, 255, 255, 0.06);
+  --onDarkHover: rgba(255, 255, 255, 0.1);
+  --onDarkBorder: rgba(255, 255, 255, 0.12);
+  --onDarkDivider: rgba(255, 255, 255, 0.14);
+  --onDarkBorderStrong: rgba(255, 255, 255, 0.18);
+  --onDarkSubtle: rgba(255, 255, 255, 0.2);
+  --ringOnDark: rgba(252, 242, 229, 0.45);
 
   --shadowButton: 0 8px 18px -10px rgba(30, 25, 20, 0.45);
   --shadowCard: 0 18px 36px -24px rgba(30, 25, 20, 0.45);
@@ -38,6 +47,8 @@
   --radiusCard: 18px;
   --radiusCardMobile: 16px;
   --radiusPanel: 28px;
+  --radiusPanelMobile: 24px;
+  --radiusIcon: 12px;
 
   --fontBody: 'Figtree', ui-sans-serif, system-ui, sans-serif;
   --fontDisplay: 'Bricolage Grotesque', 'Figtree', system-ui, sans-serif;
